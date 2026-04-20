@@ -7,10 +7,15 @@ function join {
     echo "$*"
 }
 
+### USAGE ###
+# NAME=eolo
+# NANI=(brontolo cucciolo dotto eolo gongolo mammolo pisolo)
+# if in_array "$NAME" "${NANI[@]}"; then echo "c'è"; else echo "non c'è"; fi
 function in_array() {
     for i in "${@:2}"; do
         if [ "$i" == "$1" ]; then
-            echo 1
+            return 0
         fi
     done
+    return 1
 }
