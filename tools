@@ -1,16 +1,22 @@
 #!/usr/bin/env bash
 
-# PUBLIC API
-function join {
+
+# ╔══════════════╗
+# ║  PUBLIC API  ║
+# ╚══════════════╝
+
+join() {
     local IFS="$1"
     shift
     echo "$*"
 }
 
-function in_array() {
+in_array() {
     for i in "${@:2}"; do
+        log "matching $1 with $i"
         if [ "$i" == "$1" ]; then
-            echo 1
+            return 0
         fi
     done
+    return 1
 }
