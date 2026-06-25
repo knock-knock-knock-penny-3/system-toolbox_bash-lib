@@ -11,6 +11,10 @@ join() {
     echo "$*"
 }
 
+### USAGE ###
+# NAME=eolo
+# NANI=(brontolo cucciolo dotto eolo gongolo mammolo pisolo)
+# if in_array "$NAME" "${NANI[@]}"; then echo "c'è"; else echo "non c'è"; fi
 in_array() {
     for i in "${@:2}"; do
         log "matching $1 with $i"
